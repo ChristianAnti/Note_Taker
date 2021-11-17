@@ -76,9 +76,13 @@ app.get("*", function(req, res) {
 
 
 // port setup and listening 
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
-);
+// app.listen(PORT, () =>
+//   console.log(`App listening at http://localhost:${PORT} 🚀`)
+// );
+
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 
 // contents of db.json just in case 
 // [
