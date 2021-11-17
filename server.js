@@ -10,6 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
+// async stuff
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+
 // middleware 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -56,10 +60,6 @@ app.delete("/api/notes", function(req, res) {
     })
 });
 
-// port setup and listening 
-app.listen(port, function() {
-    console.log("App listen on PORT " + PORT);
-});
 
 // chutes and ladders and routes and reqs
 app.get("/notes", function(req, res) {
@@ -73,3 +73,17 @@ app.get("/", function(req, res) {
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
+
+
+// port setup and listening 
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
+
+// contents of db.json just in case 
+// [
+//     {
+//         "title":"Test Title",
+//         "text":"Test text"
+//     }
+// ]
