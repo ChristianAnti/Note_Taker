@@ -60,3 +60,16 @@ app.delete("/api/notes", function(req, res) {
 app.listen(port, function() {
     console.log("App listen on PORT " + PORT);
 });
+
+// chutes and ladders and routes and reqs
+app.get("/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+});
