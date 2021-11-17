@@ -43,7 +43,7 @@ app.post("/api/notes", function(req, res) {
 });
 
 // the DELETE request
-app.delete("/api/notes", function(req, res) {
+app.delete("/api/notes/:id", function(req, res) {
     const deleteIt = parseInt(req.params.id);
     readFileAsync("./db/db.json", "utf8").then(function(data)  {
         const notes = [].concat(JSON.parse(data))
