@@ -56,4 +56,7 @@ app.delete("/api/notes", function(req, res) {
     })
 });
 
-
+// port setup and listening 
+app.listen(port, function() {
+    console.log("App listen on PORT " + PORT);
+});
