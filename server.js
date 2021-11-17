@@ -76,6 +76,7 @@ app.get("*", function(req, res) {
 
 
 // port setup and listening 
+// from when i coudl not figure out heroku
 // app.listen(PORT, () =>
 //   console.log(`App listening at http://localhost:${PORT} 🚀`)
 // );
