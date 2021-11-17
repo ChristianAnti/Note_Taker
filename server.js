@@ -82,7 +82,7 @@ app.get("*", function(req, res) {
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-  });
+});
 
 // contents of db.json just in case 
 // [
